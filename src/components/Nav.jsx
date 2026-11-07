@@ -13,6 +13,8 @@ function ThemeToggle() {
 const LINKS = [['work', 'Projects'], ['skills', 'Skills'], ['about', 'About']]
 
 export default function Nav({ active }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <header className="top">
       <div className="wrap">
@@ -29,12 +31,27 @@ export default function Nav({ active }) {
           <span className="logo" aria-hidden="true">AE</span>
           <strong>Amanual Ewunetu</strong>
         </a>
-        <nav aria-label="Main">
-          {LINKS.map(([id, t]) => (
-            <a key={id} href={`#${id}`} className={active === id ? 'act' : ''}>{t}</a>
-          ))}
+
+        <div className="header-actions">
           <ThemeToggle />
-          <a className="cta" href="#contact">Contact</a>
+          <button
+            type="button"
+            className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+
+        <nav className={`main-nav ${menuOpen ? 'open' : ''}`} aria-label="Main" aria-expanded={menuOpen}>
+          {LINKS.map(([id, t]) => (
+            <a key={id} href={`#${id}`} className={active === id ? 'act' : ''} onClick={() => setMenuOpen(false)}>{t}</a>
+          ))}
+          <a className="cta" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
       </div>
     </header>
