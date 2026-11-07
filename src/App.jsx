@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Projects from './components/Projects.jsx'
@@ -11,6 +12,18 @@ export default function App() {
   const progress = useProgress()
   const active = useActive(['work', 'skills', 'about', 'contact'])
   const loop = [...TECH, ...TECH]
+
+  useEffect(() => {
+    const targetId = window.location.hash.replace('#', '') || new URLSearchParams(window.location.search).get('section')
+    const target = targetId ? document.getElementById(targetId) : null
+
+    if (!target) return
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }, [])
+
   return (
     <>
       <div className="flag" aria-hidden="true"><i /><i /><i /></div>
