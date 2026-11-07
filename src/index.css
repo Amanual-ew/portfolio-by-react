@@ -74,8 +74,9 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.5rem)
 .links a{font-weight:500;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--accent);text-decoration-thickness:2px}
 .links a:hover{color:var(--accent)}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.25rem;margin:0}
-.skills > div{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(91,31,201,.02));border:1px solid var(--line);border-radius:14px;padding:1.4rem;box-shadow:0 10px 24px rgba(17,16,30,.03);transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease}
-.skills > div:hover{border-color:rgba(91,31,201,.45);transform:translateY(-2px);box-shadow:0 18px 34px rgba(17,16,30,.06)}
+.skills > div{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(91,31,201,.02));border:1px solid var(--line);border-radius:14px;padding:1.4rem;box-shadow:0 10px 24px rgba(17,16,30,.03);opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .7s cubic-bezier(.2,.7,.2,1) var(--d,0ms),border-color .25s ease,box-shadow .25s ease}
+.skills > div.in{opacity:1;transform:none}
+.skills > div:hover{border-color:rgba(91,31,201,.45);transform:translateY(-4px);box-shadow:0 18px 34px rgba(17,16,30,.08)}
 .skills dt{display:flex;align-items:center;gap:.65rem;font-family:var(--display);font-weight:700;font-size:1.1rem;margin-bottom:.85rem}
 .skills dd{margin:0;display:flex;flex-wrap:wrap;gap:.45rem}
 .skills span{background:var(--chip);border:1px solid rgba(91,31,201,.08);border-radius:999px;padding:.18rem .7rem;font-size:.85rem;transition:background .2s ease,color .2s ease,border-color .2s ease}
@@ -152,14 +153,11 @@ nav a.act:not(.cta){color:var(--ink);text-decoration:underline;text-decoration-c
 .mock .row u{animation:pulse 2.4s ease-in-out infinite}
 .mock .row u:nth-child(2){animation-delay:.3s}.mock .row u:nth-child(3){animation-delay:.6s}
 @keyframes pulse{50%{opacity:.4}}
-.skills span{opacity:0;transform:scale(.7);transition:opacity .4s ease,transform .4s cubic-bezier(.3,1.5,.5,1);transition-delay:calc(var(--d,0ms) + var(--i)*60ms)}
-.skills .in span{opacity:1;transform:none}
 .chips li{transition:transform .2s,background .2s}.chips li:hover{transform:translateY(-2px);background:var(--accent);color:var(--on-accent)}
 .glance div{transition:padding-left .25s}.glance div:hover{padding-left:.5rem}
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
   .blob,.marq div,.caret,.ch,.mock .row u{animation:none}
-  .skills span{opacity:1;transform:none;transition:none}
   .shot{transform:none!important}
 }
 .photo{display:block;width:7.5rem;height:7.5rem;border-radius:50%;object-fit:cover;border:3px solid var(--accent);margin:0 0 1.25rem;background:var(--chip)}
@@ -216,11 +214,3 @@ button.btn:hover{background:var(--ink);color:var(--bg)}
 .about-photo:hover{border-color:var(--accent);transform:translateY(-4px)}
 @media (max-width:48rem){.about-side{position:static}.about-photo{width:min(100%,14rem);margin-top:1.25rem}}
 @media (prefers-reduced-motion:reduce){.about-photo{transition:none}.about-photo:hover{transform:none}}
-.skills > div{position:relative;overflow:hidden;transition:opacity .7s ease var(--d,0ms),transform .8s cubic-bezier(.2,.7,.2,1) var(--d,0ms),border-color .25s ease,box-shadow .25s ease}
-.skills > div:hover{border-color:rgba(91,31,201,.5);box-shadow:0 18px 34px rgba(17,16,30,.06)}
-.skills dt{display:flex;align-items:center;gap:.65rem}
-.sk-ico{display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:10px;background:rgba(91,31,201,.08);color:var(--accent);border:1px solid rgba(91,31,201,.12)}
-@media (prefers-reduced-motion:reduce){
-  .skills > div{transition:none}
-  .skills span{transition:none}
-}
