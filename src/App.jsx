@@ -66,16 +66,19 @@ export default function App() {
           </nav>
 
           <div className="footer-meta footer-meta--stack">
-            <form className="footer-form" onSubmit={handleSendMessage}>
-              <textarea
-                value={message}
-                onChange={(event) => setMessage(event.target.value)}
-                placeholder="Write your message..."
-                rows="2"
-                aria-label="Write your message"
-              />
-              <button type="submit">Send</button>
-            </form>
+            <div className="footer-form-card">
+              <span className="footer-form-label">Quick message</span>
+              <form className="footer-form" onSubmit={handleSendMessage}>
+                <textarea
+                  value={message}
+                  onChange={(event) => setMessage(event.target.value)}
+                  placeholder="Write your message..."
+                  rows="2"
+                  aria-label="Write your message"
+                />
+                <button type="submit">Send</button>
+              </form>
+            </div>
             <div className="footer-copy">
               <span>© 2026</span>
               <span>Built with React + Vite</span>

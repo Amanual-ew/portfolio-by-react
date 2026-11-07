@@ -120,6 +120,8 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.5rem)
 .footer-nav a:hover{color:var(--ink)}
 .footer-meta{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
 .footer-meta--stack{align-items:flex-end;flex-direction:column}
+.footer-form-card{display:grid;gap:.55rem;padding:.8rem .9rem;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(91,31,201,.02));box-shadow:0 12px 28px rgba(17,16,30,.04)}
+.footer-form-label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .footer-form{display:flex;align-items:flex-end;gap:.7rem;flex-wrap:wrap}
 .footer-form textarea{width:min(22rem,70vw);min-height:2.7rem;max-height:7rem;resize:vertical;border:1px solid var(--line);background:rgba(255,255,255,.45);border-radius:12px;padding:.7rem .85rem;color:var(--ink);font:inherit}
 .footer-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,31,201,.12)}
