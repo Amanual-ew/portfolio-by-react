@@ -119,6 +119,13 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.5rem)
 .footer-nav a{text-decoration:none;color:var(--muted)}
 .footer-nav a:hover{color:var(--ink)}
 .footer-meta{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.footer-meta--stack{align-items:flex-end;flex-direction:column}
+.footer-form{display:flex;align-items:flex-end;gap:.7rem;flex-wrap:wrap}
+.footer-form textarea{width:min(22rem,70vw);min-height:2.7rem;max-height:7rem;resize:vertical;border:1px solid var(--line);background:rgba(255,255,255,.45);border-radius:12px;padding:.7rem .85rem;color:var(--ink);font:inherit}
+.footer-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,31,201,.12)}
+.footer-form button{border:none;border-radius:999px;background:var(--accent);color:var(--on-accent);padding:.7rem 1.1rem;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 12px 28px rgba(91,31,201,.25);transition:transform .2s ease, box-shadow .2s ease}
+.footer-form button:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(91,31,201,.32)}
+.footer-copy{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
 @media (max-width:48rem){
   .hero,.proj,.about{grid-template-columns:1fr;gap:1.75rem}
   .proj.flip .shot{order:0}

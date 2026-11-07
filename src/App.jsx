@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Projects from './components/Projects.jsx'
@@ -6,12 +6,24 @@ import Skills from './components/Skills.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import { useActive, useProgress } from './hooks.js'
-import { TECH } from './data.js'
+import { PHONE, TECH } from './data.js'
 
 export default function App() {
   const progress = useProgress()
   const active = useActive(['work', 'skills', 'about', 'contact'])
   const loop = [...TECH, ...TECH]
+  const [message, setMessage] = useState('')
+
+  const handleSendMessage = (event) => {
+    event.preventDefault()
+    const text = message.trim()
+
+    if (!text) return
+
+    const url = `https://wa.me/${PHONE.replace('+', '')}?text=${encodeURIComponent(text)}`
+    window.open(url, '_blank', 'noopener,noreferrer')
+    setMessage('')
+  }
 
   useEffect(() => {
     const targetId = window.location.hash.replace('#', '') || new URLSearchParams(window.location.search).get('section')
@@ -53,9 +65,21 @@ export default function App() {
             <a href="#contact">Contact</a>
           </nav>
 
-          <div className="footer-meta">
-            <span>© 2026</span>
-            <span>Built with React + Vite</span>
+          <div className="footer-meta footer-meta--stack">
+            <form className="footer-form" onSubmit={handleSendMessage}>
+              <textarea
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                placeholder="Write your message..."
+                rows="2"
+                aria-label="Write your message"
+              />
+              <button type="submit">Send</button>
+            </form>
+            <div className="footer-copy">
+              <span>© 2026</span>
+              <span>Built with React + Vite</span>
+            </div>
           </div>
         </div>
       </footer>
