@@ -13,6 +13,7 @@ export default function App() {
   const active = useActive(['work', 'skills', 'about', 'contact'])
   const loop = [...TECH, ...TECH]
   const [message, setMessage] = useState('')
+  const [chatOpen, setChatOpen] = useState(false)
 
   const handleSendMessage = (event) => {
     event.preventDefault()
@@ -23,6 +24,7 @@ export default function App() {
     const url = `https://wa.me/${PHONE.replace('+', '')}?text=${encodeURIComponent(text)}`
     window.open(url, '_blank', 'noopener,noreferrer')
     setMessage('')
+    setChatOpen(false)
   }
 
   useEffect(() => {
@@ -65,27 +67,42 @@ export default function App() {
             <a href="#contact">Contact</a>
           </nav>
 
-          <div className="footer-meta footer-meta--stack">
-            <div className="footer-form-card">
-              <span className="footer-form-label">Quick message</span>
-              <form className="footer-form" onSubmit={handleSendMessage}>
-                <textarea
-                  value={message}
-                  onChange={(event) => setMessage(event.target.value)}
-                  placeholder="Write your message..."
-                  rows="2"
-                  aria-label="Write your message"
-                />
-                <button type="submit">Send</button>
-              </form>
-            </div>
-            <div className="footer-copy">
-              <span>© 2026</span>
-              <span>Built with React + Vite</span>
-            </div>
+          <div className="footer-meta">
+            <span>© 2026</span>
+            <span>Built with React + Vite</span>
           </div>
         </div>
       </footer>
+
+      <div className="chat-widget">
+        <button
+          type="button"
+          className="chat-toggle"
+          onClick={() => setChatOpen((open) => !open)}
+          aria-label="Open quick message"
+        >
+          Message
+        </button>
+
+        {chatOpen && (
+          <div className="chat-panel">
+            <div className="chat-header">
+              <span>Quick message</span>
+              <button type="button" className="chat-close" onClick={() => setChatOpen(false)} aria-label="Close chat">×</button>
+            </div>
+            <form className="chat-form" onSubmit={handleSendMessage}>
+              <textarea
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                placeholder="Write your message..."
+                rows="3"
+                aria-label="Write your message"
+              />
+              <button type="submit">Send on WhatsApp</button>
+            </form>
+          </div>
+        )}
+      </div>
     </>
   )
 }

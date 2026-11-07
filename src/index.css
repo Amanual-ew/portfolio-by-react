@@ -119,15 +119,18 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.5rem)
 .footer-nav a{text-decoration:none;color:var(--muted)}
 .footer-nav a:hover{color:var(--ink)}
 .footer-meta{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
-.footer-meta--stack{align-items:flex-end;flex-direction:column}
-.footer-form-card{display:grid;gap:.55rem;padding:.8rem .9rem;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(91,31,201,.02));box-shadow:0 12px 28px rgba(17,16,30,.04)}
-.footer-form-label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.footer-form{display:flex;align-items:flex-end;gap:.7rem;flex-wrap:wrap}
-.footer-form textarea{width:min(22rem,70vw);min-height:2.7rem;max-height:7rem;resize:vertical;border:1px solid var(--line);background:rgba(255,255,255,.45);border-radius:12px;padding:.7rem .85rem;color:var(--ink);font:inherit}
-.footer-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(91,31,201,.12)}
-.footer-form button{border:none;border-radius:999px;background:var(--accent);color:var(--on-accent);padding:.7rem 1.1rem;font:inherit;font-weight:600;cursor:pointer;box-shadow:0 12px 28px rgba(91,31,201,.25);transition:transform .2s ease, box-shadow .2s ease}
-.footer-form button:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(91,31,201,.32)}
-.footer-copy{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.chat-widget{position:fixed;right:1.2rem;bottom:1.2rem;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:.75rem}
+.chat-toggle{border:none;border-radius:999px;background:var(--accent);color:var(--on-accent);padding:.8rem 1.1rem;font:inherit;font-weight:700;cursor:pointer;box-shadow:0 14px 30px rgba(91,31,201,.32);transition:transform .2s ease, box-shadow .2s ease}
+.chat-toggle:hover{transform:translateY(-2px);box-shadow:0 18px 30px rgba(91,31,201,.38)}
+.chat-panel{width:min(22rem,calc(100vw - 2rem));border:1px solid var(--line);background:rgba(17,16,30,.94);color:var(--ink);border-radius:16px;overflow:hidden;box-shadow:0 20px 45px rgba(10,8,25,.35);backdrop-filter:blur(10px)}
+.chat-header{display:flex;align-items:center;justify-content:space-between;padding:.75rem .9rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);color:#fff;font-size:.9rem;font-weight:600}
+.chat-close{border:none;background:transparent;color:#fff;font-size:1.35rem;cursor:pointer;line-height:1}
+.chat-form{display:grid;gap:.75rem;padding:.9rem}
+.chat-form textarea{width:100%;min-height:4.5rem;resize:vertical;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:10px;padding:.75rem .85rem;color:#fff;font:inherit}
+.chat-form textarea::placeholder{color:rgba(236,235,247,.62)}
+.chat-form textarea:focus{outline:none;border-color:rgba(180,155,255,.9);box-shadow:0 0 0 3px rgba(180,155,255,.18)}
+.chat-form button{border:none;border-radius:999px;background:linear-gradient(135deg, #7c46ff, #b39bff);color:#fff;padding:.75rem 1rem;font:inherit;font-weight:700;cursor:pointer;transition:transform .2s ease, filter .2s ease}
+.chat-form button:hover{transform:translateY(-1px);filter:brightness(1.04)}
 @media (max-width:48rem){
   .hero,.proj,.about{grid-template-columns:1fr;gap:1.75rem}
   .proj.flip .shot{order:0}
