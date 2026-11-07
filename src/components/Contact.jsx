@@ -49,9 +49,22 @@ const METHODS = [
 export default function Contact() {
   return (
     <section id="contact" className="contact">
-      <Reveal>
-        <h2>Get in touch</h2>
-        <p>Have a project in mind or a role to fill? Message me the way that suits you and I’ll reply as soon as I can.</p>
+      <Reveal className="contact-shell">
+        <div className="contact-header">
+          <span className="eyebrow">Let’s connect</span>
+          <h2>Build something meaningful together.</h2>
+          <p>Have a project in mind, a role to fill, or a challenge to solve? Message me the way that suits you and I’ll get back to you soon.</p>
+        </div>
+
+        <div className="contact-actions">
+          <a className="btn primary" href={`mailto:${EMAIL}?subject=${encodeURIComponent('Project inquiry')}`}>
+            Start a conversation
+          </a>
+          <a className="btn secondary" href={`https://wa.me/${PHONE.replace('+', '')}?text=${WA_TEXT}`} target="_blank" rel="noreferrer">
+            WhatsApp me
+          </a>
+        </div>
+
         <div className="cms">
           {METHODS.map((m) => (
             <a key={m.label} className="cm" href={m.href} {...(m.external ? { target: '_blank', rel: 'noreferrer' } : {})}>

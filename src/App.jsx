@@ -39,8 +39,25 @@ export default function App() {
         <About />
         <Contact />
       </main>
-      <footer>
-        <div className="wrap"><span>© 2026 Amanual Ewunetu</span><span>Built with React and Vite</span></div>
+      <footer className="site-footer">
+        <div className="wrap site-footer__inner">
+          <div className="footer-brand">
+            <span className="mini-mark">AE</span>
+            <span>Amanual Ewunetu</span>
+          </div>
+
+          <nav className="footer-nav" aria-label="Footer navigation">
+            <a href="#work">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div className="footer-meta">
+            <span>© 2026</span>
+            <span>Built with React + Vite</span>
+          </div>
+        </div>
       </footer>
     </>
   )
