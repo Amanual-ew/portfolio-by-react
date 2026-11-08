@@ -1,5 +1,5 @@
 import Reveal from './Reveal.jsx'
-import { EMAIL, GITHUB, LINKEDIN, PHONE, PHONE_DISPLAY } from '../data.js'
+import { EMAIL, GITHUB, LINKEDIN, PHONE, PHONE_DISPLAY, TELEGRAM, TELEGRAM_USERNAME } from '../data.js'
 
 // Simple line icons (24x24), drawn with the current text colour
 const ICONS = {
@@ -25,6 +25,12 @@ const ICONS = {
   github: (
     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
   ),
+  telegram: (
+    <>
+      <path d="M21.3 4.4a1.8 1.8 0 0 0-2.2-1.7L3.3 9.1c-1.1.4-1.1 1.7 0 2l5.1 1.7 2.8 7.6c.3.9 1.5.9 1.9 0l3.2-6.1 4.8 3.5c.8.6 1.9.1 2.1-.8l2.4-13.2z" />
+      <path d="M9.3 13.5l9.7-6.4" />
+    </>
+  ),
 }
 
 function Icon({ name }) {
@@ -42,6 +48,7 @@ const METHODS = [
   { icon: 'email', label: 'Email', value: EMAIL, href: `mailto:${EMAIL}?subject=${encodeURIComponent('Hello Amanual')}` },
   { icon: 'whatsapp', label: 'WhatsApp message', value: PHONE_DISPLAY, href: `https://wa.me/${PHONE.replace('+', '')}?text=${WA_TEXT}`, external: true },
   { icon: 'phone', label: 'Phone call', value: PHONE_DISPLAY, href: `tel:${PHONE}` },
+  { icon: 'telegram', label: 'Telegram', value: TELEGRAM_USERNAME, href: TELEGRAM, external: true },
   { icon: 'linkedin', label: 'LinkedIn message', value: 'amanual-ewunetu', href: LINKEDIN, external: true },
   { icon: 'github', label: 'GitHub', value: 'Amanual-ew', href: GITHUB, external: true },
 ]
@@ -62,6 +69,9 @@ export default function Contact() {
           </a>
           <a className="btn secondary" href={`https://wa.me/${PHONE.replace('+', '')}?text=${WA_TEXT}`} target="_blank" rel="noreferrer">
             WhatsApp me
+          </a>
+          <a className="btn secondary" href={TELEGRAM} target="_blank" rel="noreferrer">
+            Telegram me
           </a>
         </div>
 
