@@ -1,6 +1,6 @@
 export const EMAIL = 'amanualewunetu15@gmail.com'
 export const GITHUB = 'https://github.com/Amanual-ew'
-export const LINKEDIN = 'https://www.linkedin.com/in/amanual-ewunetu-ob0676285'
+export const LINKEDIN = 'https://www.linkedin.com/in/amanual-ewunetu-0b0676285?utm_source=share_via&utm_content=profile&utm_medium=member_android'
 export const PHONE = '+251969096452'
 export const PHONE_DISPLAY = '+251 969 096 452'
 export const CV = '/Amanual_Ewunetu_CV.pdf'
