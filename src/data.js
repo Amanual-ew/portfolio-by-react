@@ -18,10 +18,10 @@ export const GLANCE = [
 export const PROJECTS = [
   {
     name: 'Sheger Wheels', kind: 'Peer-to-peer car rental marketplace', cls: 'm1',
-    eyebrow: 'Addis Ababa', title: 'Rent a car from local owners', url: 'sheger-wheels-mu.vercel.app',
-    live: 'https://sheger-wheels-mu.vercel.app/', src: 'https://github.com/Amanual-ew/sheger-wheels',
+    eyebrow: 'Addis Ababa', title: 'Rent a car from local owners', url: 'sheger-wheels-next-amanual-ewunetu.vercel.app',
+    live: 'https://sheger-wheels-next-amanual-ewunetu.vercel.app/', src: 'https://github.com/Amanual-ew/sheger-wheels',
     image: '/images/sheger-wheels.png',
-    fallback: 'https://sheger-wheels-mu.vercel.app/opengraph-image.png',
+    fallback: 'https://sheger-wheels-next-amanual-ewunetu.vercel.app/opengraph-image.png',
     overview: 'A marketplace where car owners in Addis Ababa list their vehicles and renters book them by the day. Owners approve every request, and an admin reviews each listing before it appears in search. Payments are simulated, so no real money moves.',
     features: [
       'Search and filter cars by neighbourhood, price, transmission and seats',
