@@ -34,7 +34,11 @@ export default function App() {
     if (!target) return
 
     requestAnimationFrame(() => {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const header = document.querySelector('header.top')
+      const offset = header ? header.offsetHeight + 12 : 0
+      const top = target.getBoundingClientRect().top + window.scrollY - offset
+
+      window.scrollTo({ top, behavior: 'smooth' })
     })
   }, [])
 
