@@ -150,14 +150,14 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,4vw,2.5rem)
   .hero,.proj,.about{grid-template-columns:1fr;gap:1.75rem}
   .proj.flip .shot{order:0}
   .hero{padding:3rem 0}
-  header.top .wrap{flex-wrap:wrap;row-gap:.75rem;align-items:center}
+  header.top .wrap{position:relative;flex-wrap:wrap;row-gap:.75rem;align-items:center}
   .header-actions{margin-left:auto}
   .menu-toggle{display:flex}
-  .main-nav{display:none;width:100%;flex-direction:column;align-items:stretch;padding-top:.75rem;border-top:1px solid var(--line);gap:.8rem;animation:navSlide .2s ease both}
+  .main-nav{display:none;position:absolute;top:calc(100% + .55rem);right:0;z-index:25;width:min(15rem,calc(100vw - 2.75rem));flex-direction:column;align-items:flex-start;padding:.5rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 18px 32px rgba(17,16,30,.12);gap:.4rem;animation:navSlide .2s ease both}
   .main-nav.open{display:flex}
-  .main-nav a,.main-nav .cta{width:100%;justify-content:center;padding-block:.7rem}
-  .main-nav a{padding-inline:.8rem;border-radius:10px;background:rgba(91,31,201,.03)}
-  .main-nav .cta{display:inline-flex;align-items:center;justify-content:center}
+  .main-nav a,.main-nav .cta{width:100%;justify-content:flex-start;padding:.7rem .8rem;border-radius:10px}
+  .main-nav a{padding-inline:.8rem;background:transparent}
+  .main-nav .cta{display:inline-flex;align-items:center;justify-content:flex-start}
   .main-nav .act{background:rgba(91,31,201,.08)}
   .site-footer__inner{align-items:flex-start;flex-direction:column}
   .contact-actions{flex-direction:column;align-items:stretch}
