@@ -1,5 +1,5 @@
 import Reveal from './Reveal.jsx'
-import { EMAIL, GITHUB, LINKEDIN, PHONE, PHONE_DISPLAY, TELEGRAM, TELEGRAM_USERNAME } from '../data.js'
+import { EMAIL, GITHUB, LINKEDIN, PHONE, PHONE_DISPLAY } from '../data.js'
 
 // Simple line icons (24x24), drawn with the current text colour
 const ICONS = {
@@ -48,7 +48,6 @@ const METHODS = [
   { icon: 'email', label: 'Email', value: EMAIL, href: `mailto:${EMAIL}?subject=${encodeURIComponent('Hello Amanual')}` },
   { icon: 'whatsapp', label: 'WhatsApp message', value: PHONE_DISPLAY, href: `https://wa.me/${PHONE.replace('+', '')}?text=${WA_TEXT}`, external: true },
   { icon: 'phone', label: 'Phone call', value: PHONE_DISPLAY, href: `tel:${PHONE}` },
-  { icon: 'telegram', label: 'Telegram', value: TELEGRAM_USERNAME, href: TELEGRAM, external: true },
   { icon: 'linkedin', label: 'LinkedIn message', value: 'amanual-ewunetu', href: LINKEDIN, external: true },
   { icon: 'github', label: 'GitHub', value: 'Amanual-ew', href: GITHUB, external: true },
 ]
@@ -69,9 +68,6 @@ export default function Contact() {
           </a>
           <a className="btn secondary" href={`https://wa.me/${PHONE.replace('+', '')}?text=${WA_TEXT}`} target="_blank" rel="noreferrer">
             WhatsApp me
-          </a>
-          <a className="btn secondary" href={TELEGRAM} target="_blank" rel="noreferrer">
-            Telegram me
           </a>
         </div>
 
