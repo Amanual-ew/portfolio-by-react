@@ -32,6 +32,13 @@ export default function Nav({ active }) {
           <strong>Amanual Ewunetu</strong>
         </a>
 
+        <nav className={`main-nav ${menuOpen ? 'open' : ''}`} aria-label="Main" aria-expanded={menuOpen}>
+          {LINKS.map(([id, t]) => (
+            <a key={id} href={`#${id}`} className={active === id ? 'act' : ''} onClick={() => setMenuOpen(false)}>{t}</a>
+          ))}
+          <a className="cta" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        </nav>
+
         <div className="header-actions">
           <ThemeToggle />
           <button
@@ -46,13 +53,6 @@ export default function Nav({ active }) {
             <span />
           </button>
         </div>
-
-        <nav className={`main-nav ${menuOpen ? 'open' : ''}`} aria-label="Main" aria-expanded={menuOpen}>
-          {LINKS.map(([id, t]) => (
-            <a key={id} href={`#${id}`} className={active === id ? 'act' : ''} onClick={() => setMenuOpen(false)}>{t}</a>
-          ))}
-          <a className="cta" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-        </nav>
       </div>
     </header>
   )
